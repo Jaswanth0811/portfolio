@@ -11,6 +11,7 @@ const DOCUMENTS = [
   { title: "B.Tech 3-1-1 Marks", subtitle: "Private certificate file", url: "https://res.cloudinary.com/dwxiibqcw/image/upload/v1781976682/3-1-1.pdf" },
   { title: "B.Tech 3-1-2 Marks", subtitle: "Private certificate file", url: "https://res.cloudinary.com/dwxiibqcw/image/upload/v1781976682/3-1-2.pdf" },
   { title: "B.Tech 3-2 Marks", subtitle: "Private certificate file", url: "https://res.cloudinary.com/dwxiibqcw/image/upload/v1781976682/3-2.pdf" },
+  { title: "SSC OD Certificate", subtitle: "Private certificate file", url: "https://res.cloudinary.com/dwxiibqcw/image/upload/v1781976682/OD_SSC.pdf" },
 ];
 
 export default function AdminPage() {
