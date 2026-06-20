@@ -3,6 +3,16 @@
 import { useState } from "react";
 import { Lock, FileText, Download } from "lucide-react";
 
+const DOCUMENTS = [
+  { title: "10th Marks (SSC)", subtitle: "Private certificate file", url: "https://res.cloudinary.com/dwxiibqcw/image/upload/v1781976682/10th_Marks.pdf" },
+  { title: "Diploma Marks", subtitle: "Private certificate file", url: "https://res.cloudinary.com/dwxiibqcw/image/upload/v1781976682/Diploma_Marks.pdf" },
+  { title: "B.Tech 2-1 Marks", subtitle: "Private certificate file", url: "https://res.cloudinary.com/dwxiibqcw/image/upload/v1781976682/2-1.pdf" },
+  { title: "B.Tech 2-2 Marks", subtitle: "Private certificate file", url: "https://res.cloudinary.com/dwxiibqcw/image/upload/v1781976682/2-2.pdf" },
+  { title: "B.Tech 3-1-1 Marks", subtitle: "Private certificate file", url: "https://res.cloudinary.com/dwxiibqcw/image/upload/v1781976682/3-1-1.pdf" },
+  { title: "B.Tech 3-1-2 Marks", subtitle: "Private certificate file", url: "https://res.cloudinary.com/dwxiibqcw/image/upload/v1781976682/3-1-2.pdf" },
+  { title: "B.Tech 3-2 Marks", subtitle: "Private certificate file", url: "https://res.cloudinary.com/dwxiibqcw/image/upload/v1781976682/3-2.pdf" },
+];
+
 export default function AdminPage() {
   const [passcode, setPasscode] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -66,26 +76,27 @@ export default function AdminPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Document Card */}
-          <div className="bg-card border border-border p-6 rounded-2xl flex items-start justify-between group hover:border-accent/50 transition-colors">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center">
-                <FileText className="text-accent" size={24} />
+          {DOCUMENTS.map((doc, idx) => (
+            <div key={idx} className="bg-card border border-border p-6 rounded-2xl flex items-start justify-between group hover:border-accent/50 transition-colors">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center">
+                  <FileText className="text-accent" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-white font-bold text-lg">{doc.title}</h3>
+                  <p className="text-muted text-sm">{doc.subtitle}</p>
+                </div>
               </div>
-              <div>
-                <h3 className="text-white font-bold text-lg">10th Marks (SSC)</h3>
-                <p className="text-muted text-sm">Private certificate file</p>
-              </div>
+              <a 
+                href={doc.url} 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="min-w-[40px] w-10 h-10 bg-background rounded-full flex items-center justify-center text-muted group-hover:text-accent transition-colors ml-4"
+              >
+                <Download size={18} />
+              </a>
             </div>
-            <a 
-              href="https://res.cloudinary.com/dwxiibqcw/image/upload/v1781976682/10th_Marks.pdf" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 bg-background rounded-full flex items-center justify-center text-muted group-hover:text-accent transition-colors"
-            >
-              <Download size={18} />
-            </a>
-          </div>
+          ))}
         </div>
       </div>
     </div>
