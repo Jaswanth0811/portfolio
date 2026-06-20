@@ -1,7 +1,6 @@
 "use client";
 
 import { Section } from "./Section";
-import { Download } from "lucide-react";
 import { motion } from "framer-motion";
 
 const EDUCATION = [
@@ -57,17 +56,6 @@ export function Education() {
                   )}
                 </div>
                 <div className="flex items-center gap-3 mt-1 md:mt-0">
-                  {item.link && (
-                    <a 
-                      href={item.link} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-muted hover:text-accent transition-colors"
-                      title="Download Certificate"
-                    >
-                      <Download size={18} />
-                    </a>
-                  )}
                   <span className="text-sm md:text-base text-accent font-medium">
                     {item.period}
                   </span>
