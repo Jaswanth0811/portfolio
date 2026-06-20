@@ -12,6 +12,8 @@ export const metadata: Metadata = {
   description: "Portfolio of Jaswanth Ganta - Mechanical Engineer & Software Developer",
 };
 
+import { AntiDownload } from "@/components/AntiDownload";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -23,6 +25,7 @@ export default function RootLayout({
       className={`${inter.variable} ${inter.className} h-full antialiased dark`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground selection:bg-accent/30 selection:text-white">
+        <AntiDownload />
         {children}
       </body>
     </html>

@@ -83,7 +83,7 @@ export function Hero() {
               <img 
                 src="https://res.cloudinary.com/dwxiibqcw/image/upload/v1781976682/IMG-20260222-WA0005-EDIT_jejzt2.jpg" 
                 alt="Jaswanth Ganta" 
-                className="w-full h-full object-cover pointer-events-none select-none"
+                className="protected-photo w-full h-full object-cover pointer-events-none select-none"
                 onContextMenu={(e) => e.preventDefault()}
                 onDragStart={(e) => e.preventDefault()}
               />

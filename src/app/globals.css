@@ -34,3 +34,10 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+
+/* Anti-Screenshot Protection */
+.hide-protected-images .protected-photo {
+  filter: brightness(0) !important;
+  background-color: black !important;
+}
