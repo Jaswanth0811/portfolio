@@ -53,8 +53,9 @@ export function Hero() {
             className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4"
           >
             <a
-              href="/Jaswanth Ganta Resume.pdf"
-              download
+              href="https://drive.google.com/file/d/1JXAU66RDZrh3dToMKRpDTL_0mHSOugrq/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group flex items-center justify-center gap-2 bg-white text-black px-8 py-4 rounded-2xl font-medium w-full sm:w-auto hover:scale-105 transition-transform duration-300"
             >
               <Download size={20} className="group-hover:-translate-y-1 transition-transform" />
@@ -76,11 +77,16 @@ export function Hero() {
           transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
           className="order-1 lg:order-2 flex justify-center lg:justify-end"
         >
-          {/* Abstract Placeholder for Profile Image */}
           <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-[400px] lg:h-[400px]">
             <div className="absolute inset-0 bg-gradient-to-tr from-accent/20 to-purple-500/20 rounded-full animate-pulse blur-3xl" />
             <div className="absolute inset-4 bg-card border border-border rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl flex items-center justify-center rotate-3 hover:rotate-0 transition-transform duration-500">
-              <div className="text-muted/30 font-bold text-9xl tracking-tighter mix-blend-overlay">JG</div>
+              <img 
+                src="https://drive.google.com/uc?export=view&id=1J8hSZQqGzEHyshJsDfq0HInEeckFMLyt" 
+                alt="Jaswanth Ganta" 
+                className="w-full h-full object-cover pointer-events-none select-none"
+                onContextMenu={(e) => e.preventDefault()}
+                onDragStart={(e) => e.preventDefault()}
+              />
             </div>
           </div>
         </motion.div>

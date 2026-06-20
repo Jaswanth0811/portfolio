@@ -4,19 +4,25 @@ import { Section } from "./Section";
 
 const SKILL_CATEGORIES = [
   {
-    title: "Engineering",
-    skills: ["Arduino", "AutoCAD", "SolidWorks", "Catia V5", "3D Printing"],
+    title: "Technical Skills",
+    skills: ["Auto CAD", "Solidworks", "CATIA V5", "Java (Basic)", "3D Designing"],
   },
   {
     title: "Professional Skills",
     skills: [
-      "Leadership",
+      "Management Skills",
+      "Creativity",
       "Teamwork",
       "Communication",
       "Critical Thinking",
-      "Project Management",
-      "Creativity",
+      "Leadership",
+      "Strength",
+      "Meeting deadlines",
     ],
+  },
+  {
+    title: "Languages",
+    skills: ["Telugu", "English"],
   },
 ];
 
