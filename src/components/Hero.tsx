@@ -53,7 +53,7 @@ export function Hero() {
             className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4"
           >
             <a
-              href="https://drive.google.com/file/d/1JXAU66RDZrh3dToMKRpDTL_0mHSOugrq/view?usp=sharing"
+              href="https://res.cloudinary.com/dwxiibqcw/image/upload/v1781976682/Jaswanth_Ganta_Resume_fhxbrn.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center justify-center gap-2 bg-white text-black px-8 py-4 rounded-2xl font-medium w-full sm:w-auto hover:scale-105 transition-transform duration-300"
@@ -81,7 +81,7 @@ export function Hero() {
             <div className="absolute inset-0 bg-gradient-to-tr from-accent/20 to-purple-500/20 rounded-full animate-pulse blur-3xl" />
             <div className="absolute inset-4 bg-card border border-border rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl flex items-center justify-center rotate-3 hover:rotate-0 transition-transform duration-500">
               <img 
-                src="https://drive.google.com/uc?export=view&id=1J8hSZQqGzEHyshJsDfq0HInEeckFMLyt" 
+                src="https://res.cloudinary.com/dwxiibqcw/image/upload/v1781976682/IMG-20260222-WA0005-EDIT_jejzt2.jpg" 
                 alt="Jaswanth Ganta" 
                 className="w-full h-full object-cover pointer-events-none select-none"
                 onContextMenu={(e) => e.preventDefault()}
