@@ -20,7 +20,6 @@ const EDUCATION = [
     institution: "Sri Suryodaya High School",
     degree: "SSC",
     period: "2020–2021",
-    link: "https://res.cloudinary.com/dwxiibqcw/image/upload/v1781976682/10th_Marks.pdf"
   },
 ];
 
