@@ -1,6 +1,7 @@
 "use client";
 
 import { Section } from "./Section";
+import { Download } from "lucide-react";
 import { motion } from "framer-motion";
 
 const EDUCATION = [
@@ -19,21 +20,22 @@ const EDUCATION = [
     institution: "Sri Suryodaya High School",
     degree: "SSC",
     period: "2020–2021",
+    link: "https://res.cloudinary.com/dwxiibqcw/image/upload/v1781976682/10th_Marks.pdf"
   },
 ];
 
 export function Education() {
   return (
     <Section id="education">
-      <div className="space-y-16">
+      <div className="space-y-12">
         <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
           Education
         </h2>
 
-        <div className="relative border-l border-border ml-4 md:ml-6 space-y-12">
+        <div className="relative border-l border-white/10 ml-3 md:ml-4 space-y-12 pb-4">
           {EDUCATION.map((item, index) => (
             <motion.div
-              key={item.institution}
+              key={index}
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-100px" }}
@@ -45,22 +47,35 @@ export function Education() {
               </div>
               
               <div className="flex flex-col md:flex-row md:items-baseline md:justify-between mb-2">
-                <div className="flex flex-wrap items-center gap-3">
-                  <h3 className="text-2xl font-bold text-white">
+                <div className="flex items-center gap-3">
+                  <h3 className="text-xl md:text-2xl font-bold text-white">
                     {item.institution}
                   </h3>
                   {item.status && (
-                    <span className="inline-flex text-[10px] sm:text-xs font-bold text-accent bg-accent/10 border border-accent/20 px-3 py-1 rounded-full uppercase tracking-wider">
+                    <span className="text-[10px] md:text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider bg-accent/10 text-accent border border-accent/20">
                       {item.status}
                     </span>
                   )}
                 </div>
-                <span className="text-sm font-medium text-accent/80 md:text-right mt-2 md:mt-0">
-                  {item.period}
-                </span>
+                <div className="flex items-center gap-3 mt-1 md:mt-0">
+                  {item.link && (
+                    <a 
+                      href={item.link} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-muted hover:text-accent transition-colors"
+                      title="Download Certificate"
+                    >
+                      <Download size={18} />
+                    </a>
+                  )}
+                  <span className="text-sm md:text-base text-accent font-medium">
+                    {item.period}
+                  </span>
+                </div>
               </div>
               
-              <p className="text-lg text-muted">
+              <p className="text-muted text-base md:text-lg">
                 {item.degree}
               </p>
             </motion.div>
