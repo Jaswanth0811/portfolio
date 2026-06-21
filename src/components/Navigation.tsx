@@ -57,14 +57,19 @@ export function Navigation() {
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-6">
           {NAV_LINKS.map((link) => (
-            <a
+            <motion.a
               key={link.name}
               href={link.href}
               onClick={(e) => { e.preventDefault(); handleLinkClick(link.href); }}
-              className="text-sm font-medium text-muted hover:text-white transition-colors"
+              className="text-sm font-medium text-muted hover:text-white transition-colors cursor-pointer"
+              whileHover={{ 
+                scale: 1.15, 
+                textShadow: "0px 0px 12px rgba(59,130,246,0.8)",
+              }}
+              transition={{ type: "spring", stiffness: 300, damping: 15 }}
             >
               {link.name}
-            </a>
+            </motion.a>
           ))}
         </nav>
 

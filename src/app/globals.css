@@ -46,3 +46,17 @@ a, button, [role="button"], input, select, textarea {
   filter: brightness(0) !important;
   background-color: black !important;
 }
+
+@keyframes shine {
+  0% { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+.group:hover .shiny-text-hover {
+  background: linear-gradient(120deg, rgba(255,255,255,0.4) 40%, rgba(255,255,255,1) 50%, rgba(255,255,255,0.4) 60%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shine 2.5s linear infinite;
+}
