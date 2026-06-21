@@ -25,8 +25,8 @@ export function Hero() {
           className="flex flex-col items-center space-y-6"
         >
           <motion.h3 
-            initial={{ opacity: 0, tracking: "0em" }}
-            animate={{ opacity: 1, tracking: "0.2em" }}
+            initial={{ opacity: 0, letterSpacing: "0em" }}
+            animate={{ opacity: 1, letterSpacing: "0.2em" }}
             transition={{ delay: 0.2, duration: 1 }}
             className="text-accent font-bold uppercase text-xs md:text-sm tracking-[0.2em]"
           >
