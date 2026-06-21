@@ -32,25 +32,25 @@ export function Contact() {
                 {/* GLOW LAYER */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-[12px] pointer-events-none">
                   <div className="absolute inset-0 overflow-hidden rounded-2xl">
-                    <div className="absolute left-1/2 top-1/2 aspect-square w-[250%] -translate-x-1/2 -translate-y-1/2 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,transparent_0_270deg,#3b82f6_360deg)]" />
-                    <div className="absolute left-1/2 top-1/2 aspect-square w-[250%] -translate-x-1/2 -translate-y-1/2 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_180deg,transparent_0_270deg,#60a5fa_360deg)]" />
-                    <div className="absolute inset-[2px] rounded-2xl bg-black" />
+                    <div className="absolute left-1/2 top-1/2 aspect-square w-[250%] -translate-x-1/2 -translate-y-1/2 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,transparent_0_270deg,var(--glow-1)_360deg)]" />
+                    <div className="absolute left-1/2 top-1/2 aspect-square w-[250%] -translate-x-1/2 -translate-y-1/2 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_180deg,transparent_0_270deg,var(--glow-2)_360deg)]" />
+                    <div className="absolute inset-[2px] rounded-2xl bg-background" />
                   </div>
                 </div>
 
                 {/* MAIN BORDER LAYER */}
                 <div className="absolute inset-0 overflow-hidden rounded-2xl pointer-events-none">
                   <div className="absolute inset-0 border border-border transition-opacity duration-500 group-hover:opacity-0" />
-                  <div className="absolute left-1/2 top-1/2 aspect-square w-[250%] -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,transparent_0_270deg,#3b82f6_360deg)] transition-opacity duration-500" />
-                  <div className="absolute left-1/2 top-1/2 aspect-square w-[250%] -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_180deg,transparent_0_270deg,#60a5fa_360deg)] transition-opacity duration-500" />
+                  <div className="absolute left-1/2 top-1/2 aspect-square w-[250%] -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,transparent_0_270deg,var(--glow-1)_360deg)] transition-opacity duration-500" />
+                  <div className="absolute left-1/2 top-1/2 aspect-square w-[250%] -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_180deg,transparent_0_270deg,var(--glow-2)_360deg)] transition-opacity duration-500" />
                 </div>
 
                 {/* INNER CONTENT */}
-                <div className="relative z-10 m-[1.5px] flex items-center gap-4 h-[calc(100%-3px)] w-[calc(100%-3px)] bg-[#111111] rounded-[14.5px] p-4 overflow-hidden">
-                  <div className="bg-background p-3 rounded-xl group-hover:scale-110 transition-transform duration-300">
-                    <Mail className="text-white w-6 h-6" />
+                <div className="relative z-10 m-[1.5px] flex items-center gap-4 h-[calc(100%-3px)] w-[calc(100%-3px)] bg-background rounded-[14.5px] p-4 overflow-hidden">
+                  <div className="bg-background/80 p-3 rounded-xl group-hover:scale-110 transition-transform duration-300">
+                    <Mail className="text-foreground w-6 h-6" />
                   </div>
-                  <span className="text-lg font-medium text-white origin-left group-hover:scale-105 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)] transition-all duration-300">Email Me</span>
+                  <span className="text-lg font-medium text-foreground origin-left group-hover:scale-105 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)] transition-all duration-300">Email Me</span>
                 </div>
               </a>
               
@@ -63,25 +63,25 @@ export function Contact() {
                 {/* GLOW LAYER */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-[12px] pointer-events-none">
                   <div className="absolute inset-0 overflow-hidden rounded-2xl">
-                    <div className="absolute left-1/2 top-1/2 aspect-square w-[250%] -translate-x-1/2 -translate-y-1/2 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,transparent_0_270deg,#3b82f6_360deg)]" />
-                    <div className="absolute left-1/2 top-1/2 aspect-square w-[250%] -translate-x-1/2 -translate-y-1/2 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_180deg,transparent_0_270deg,#60a5fa_360deg)]" />
-                    <div className="absolute inset-[2px] rounded-2xl bg-black" />
+                    <div className="absolute left-1/2 top-1/2 aspect-square w-[250%] -translate-x-1/2 -translate-y-1/2 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,transparent_0_270deg,var(--glow-1)_360deg)]" />
+                    <div className="absolute left-1/2 top-1/2 aspect-square w-[250%] -translate-x-1/2 -translate-y-1/2 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_180deg,transparent_0_270deg,var(--glow-2)_360deg)]" />
+                    <div className="absolute inset-[2px] rounded-2xl bg-background" />
                   </div>
                 </div>
 
                 {/* MAIN BORDER LAYER */}
                 <div className="absolute inset-0 overflow-hidden rounded-2xl pointer-events-none">
                   <div className="absolute inset-0 border border-border transition-opacity duration-500 group-hover:opacity-0" />
-                  <div className="absolute left-1/2 top-1/2 aspect-square w-[250%] -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,transparent_0_270deg,#3b82f6_360deg)] transition-opacity duration-500" />
-                  <div className="absolute left-1/2 top-1/2 aspect-square w-[250%] -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_180deg,transparent_0_270deg,#60a5fa_360deg)] transition-opacity duration-500" />
+                  <div className="absolute left-1/2 top-1/2 aspect-square w-[250%] -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,transparent_0_270deg,var(--glow-1)_360deg)] transition-opacity duration-500" />
+                  <div className="absolute left-1/2 top-1/2 aspect-square w-[250%] -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_180deg,transparent_0_270deg,var(--glow-2)_360deg)] transition-opacity duration-500" />
                 </div>
 
                 {/* INNER CONTENT */}
-                <div className="relative z-10 m-[1.5px] flex items-center gap-4 h-[calc(100%-3px)] w-[calc(100%-3px)] bg-[#111111] rounded-[14.5px] p-4 overflow-hidden">
-                  <div className="bg-background p-3 rounded-xl group-hover:scale-110 transition-transform duration-300">
-                    <Globe className="text-white w-6 h-6" />
+                <div className="relative z-10 m-[1.5px] flex items-center gap-4 h-[calc(100%-3px)] w-[calc(100%-3px)] bg-background rounded-[14.5px] p-4 overflow-hidden">
+                  <div className="bg-background/80 p-3 rounded-xl group-hover:scale-110 transition-transform duration-300">
+                    <Globe className="text-foreground w-6 h-6" />
                   </div>
-                  <span className="text-lg font-medium text-white origin-left group-hover:scale-105 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)] transition-all duration-300">LinkedIn</span>
+                  <span className="text-lg font-medium text-foreground origin-left group-hover:scale-105 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)] transition-all duration-300">LinkedIn</span>
                 </div>
               </a>
               
@@ -94,25 +94,25 @@ export function Contact() {
                 {/* GLOW LAYER */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-[12px] pointer-events-none">
                   <div className="absolute inset-0 overflow-hidden rounded-2xl">
-                    <div className="absolute left-1/2 top-1/2 aspect-square w-[250%] -translate-x-1/2 -translate-y-1/2 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,transparent_0_270deg,#3b82f6_360deg)]" />
-                    <div className="absolute left-1/2 top-1/2 aspect-square w-[250%] -translate-x-1/2 -translate-y-1/2 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_180deg,transparent_0_270deg,#60a5fa_360deg)]" />
-                    <div className="absolute inset-[2px] rounded-2xl bg-black" />
+                    <div className="absolute left-1/2 top-1/2 aspect-square w-[250%] -translate-x-1/2 -translate-y-1/2 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,transparent_0_270deg,var(--glow-1)_360deg)]" />
+                    <div className="absolute left-1/2 top-1/2 aspect-square w-[250%] -translate-x-1/2 -translate-y-1/2 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_180deg,transparent_0_270deg,var(--glow-2)_360deg)]" />
+                    <div className="absolute inset-[2px] rounded-2xl bg-background" />
                   </div>
                 </div>
 
                 {/* MAIN BORDER LAYER */}
                 <div className="absolute inset-0 overflow-hidden rounded-2xl pointer-events-none">
                   <div className="absolute inset-0 border border-border transition-opacity duration-500 group-hover:opacity-0" />
-                  <div className="absolute left-1/2 top-1/2 aspect-square w-[250%] -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,transparent_0_270deg,#3b82f6_360deg)] transition-opacity duration-500" />
-                  <div className="absolute left-1/2 top-1/2 aspect-square w-[250%] -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_180deg,transparent_0_270deg,#60a5fa_360deg)] transition-opacity duration-500" />
+                  <div className="absolute left-1/2 top-1/2 aspect-square w-[250%] -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,transparent_0_270deg,var(--glow-1)_360deg)] transition-opacity duration-500" />
+                  <div className="absolute left-1/2 top-1/2 aspect-square w-[250%] -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_180deg,transparent_0_270deg,var(--glow-2)_360deg)] transition-opacity duration-500" />
                 </div>
 
                 {/* INNER CONTENT */}
-                <div className="relative z-10 m-[1.5px] flex items-center gap-4 h-[calc(100%-3px)] w-[calc(100%-3px)] bg-[#111111] rounded-[14.5px] p-4 overflow-hidden">
-                  <div className="bg-background p-3 rounded-xl group-hover:scale-110 transition-transform duration-300">
-                    <Code className="text-white w-6 h-6" />
+                <div className="relative z-10 m-[1.5px] flex items-center gap-4 h-[calc(100%-3px)] w-[calc(100%-3px)] bg-background rounded-[14.5px] p-4 overflow-hidden">
+                  <div className="bg-background/80 p-3 rounded-xl group-hover:scale-110 transition-transform duration-300">
+                    <Code className="text-foreground w-6 h-6" />
                   </div>
-                  <span className="text-lg font-medium text-white origin-left group-hover:scale-105 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)] transition-all duration-300">GitHub</span>
+                  <span className="text-lg font-medium text-foreground origin-left group-hover:scale-105 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)] transition-all duration-300">GitHub</span>
                 </div>
               </a>
 
@@ -125,21 +125,21 @@ export function Contact() {
                 {/* GLOW LAYER */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-[12px] pointer-events-none">
                   <div className="absolute inset-0 overflow-hidden rounded-2xl">
-                    <div className="absolute left-1/2 top-1/2 aspect-square w-[250%] -translate-x-1/2 -translate-y-1/2 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,transparent_0_270deg,#3b82f6_360deg)]" />
-                    <div className="absolute left-1/2 top-1/2 aspect-square w-[250%] -translate-x-1/2 -translate-y-1/2 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_180deg,transparent_0_270deg,#60a5fa_360deg)]" />
-                    <div className="absolute inset-[2px] rounded-2xl bg-black" />
+                    <div className="absolute left-1/2 top-1/2 aspect-square w-[250%] -translate-x-1/2 -translate-y-1/2 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,transparent_0_270deg,var(--glow-1)_360deg)]" />
+                    <div className="absolute left-1/2 top-1/2 aspect-square w-[250%] -translate-x-1/2 -translate-y-1/2 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_180deg,transparent_0_270deg,var(--glow-2)_360deg)]" />
+                    <div className="absolute inset-[2px] rounded-2xl bg-background" />
                   </div>
                 </div>
 
                 {/* MAIN BORDER LAYER */}
                 <div className="absolute inset-0 overflow-hidden rounded-2xl pointer-events-none">
                   <div className="absolute inset-0 border border-accent/20 transition-opacity duration-500 group-hover:opacity-0" />
-                  <div className="absolute left-1/2 top-1/2 aspect-square w-[250%] -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,transparent_0_270deg,#3b82f6_360deg)] transition-opacity duration-500" />
-                  <div className="absolute left-1/2 top-1/2 aspect-square w-[250%] -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_180deg,transparent_0_270deg,#60a5fa_360deg)] transition-opacity duration-500" />
+                  <div className="absolute left-1/2 top-1/2 aspect-square w-[250%] -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,transparent_0_270deg,var(--glow-1)_360deg)] transition-opacity duration-500" />
+                  <div className="absolute left-1/2 top-1/2 aspect-square w-[250%] -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_180deg,transparent_0_270deg,var(--glow-2)_360deg)] transition-opacity duration-500" />
                 </div>
 
                 {/* INNER CONTENT */}
-                <div className="relative z-10 m-[1.5px] flex items-center gap-4 h-[calc(100%-3px)] w-[calc(100%-3px)] bg-[#0f172a] rounded-[14.5px] p-4 overflow-hidden">
+                <div className="relative z-10 m-[1.5px] flex items-center gap-4 h-[calc(100%-3px)] w-[calc(100%-3px)] bg-background rounded-[14.5px] p-4 overflow-hidden">
                   <div className="bg-accent text-white p-3 rounded-xl group-hover:scale-110 transition-transform duration-300">
                     <Download className="w-6 h-6" />
                   </div>
@@ -209,7 +209,7 @@ export function Contact() {
               <button
                 type="submit"
                 disabled={isSending || isSent}
-                className="w-full flex items-center justify-center gap-2 bg-white text-black font-medium py-4 rounded-xl hover:bg-white/90 transition-colors mt-4 disabled:opacity-70 disabled:cursor-not-allowed"
+                className="w-full flex items-center justify-center gap-2 bg-foreground text-background font-medium py-4 rounded-xl hover:opacity-90 transition-colors mt-4 disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {isSending ? (
                   <>
