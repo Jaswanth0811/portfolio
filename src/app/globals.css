@@ -18,9 +18,9 @@ html.dark {
   --card: #111111;
   --border: rgba(255, 255, 255, 0.08);
   --muted: #A1A1AA;
-  --accent: #3B82F6;
-  --glow-1: #3b82f6;
-  --glow-2: #60a5fa;
+  --accent: #FFFFFF;
+  --glow-1: #FFFFFF;
+  --glow-2: #A1A1AA;
 }
 
 @theme inline {
@@ -316,5 +316,39 @@ html:not(.dark) {
   /* Remove blue text hover glow from navigation links in light mode */
   header nav a {
     text-shadow: none !important;
+  }
+}
+
+/* Dark mode aesthetic overrides for hardcoded classes */
+html.dark {
+  /* In dark theme, accent buttons (which are now white background) should have dark text */
+  .bg-accent,
+  .bg-accent *,
+  button.bg-accent,
+  a.bg-accent,
+  a.bg-accent * {
+    color: #0A0A0A !important;
+  }
+
+  /* Overrides for hardcoded blue shadows to be white/gray glows in dark theme */
+  .shadow-\[0_0_15px_rgba\(59\,130\,246\,0\.5\)\] {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.25) !important;
+  }
+  .shadow-\[0_0_20px_rgba\(59\,130\,246\,0\.3\)\] {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.15) !important;
+  }
+  .hover\:shadow-\[0_0_30px_rgba\(59\,130\,246\,0\.5\)\]:hover {
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.35) !important;
+  }
+  .group-hover\:shadow-\[0_0_20px_rgba\(59\,130\,246\,0\.15\)\] {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1) !important;
+  }
+  .shadow-\[0_0_10px_rgba\(59\,130\,246\,0\.15\)\] {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.08) !important;
+  }
+
+  /* Change navigation link hover text-shadow from blue to white glow in dark mode */
+  header nav a:hover {
+    text-shadow: 0px 0px 12px rgba(255, 255, 255, 0.6) !important;
   }
 }
