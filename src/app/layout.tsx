@@ -15,6 +15,7 @@ export const metadata: Metadata = {
 };
 
 import { AntiDownload } from "@/components/AntiDownload";
+import CustomCursor from "@/components/CustomCursor";
 
 export default function RootLayout({
   children,
@@ -27,6 +28,7 @@ export default function RootLayout({
       className={`${inter.variable} ${inter.className} h-full antialiased dark`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground selection:bg-accent/30 selection:text-white">
+        <CustomCursor />
         <ClickSparkle />
         <AntiDownload />
         <LoadingScreen>{children}</LoadingScreen>
