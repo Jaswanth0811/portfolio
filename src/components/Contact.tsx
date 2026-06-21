@@ -1,9 +1,13 @@
 "use client";
 
 import { Section } from "./Section";
-import { Mail, Globe, Code, Download, Send } from "lucide-react";
+import { Mail, Globe, Code, Download, Send, Loader2, CheckCircle2 } from "lucide-react";
+import { useState } from "react";
 
 export function Contact() {
+  const [isSending, setIsSending] = useState(false);
+  const [isSent, setIsSent] = useState(false);
+
   return (
     <Section id="contact">
       <div className="max-w-4xl mx-auto space-y-16">
@@ -155,10 +159,19 @@ export function Contact() {
               const subject = formData.get("subject") as string;
               const message = formData.get("message") as string;
               
-              const body = `Name: ${name}\n\nMessage:\n${message}`;
-              const mailtoUrl = `mailto:jaswanthganta2005@outlook.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-              
-              window.location.href = mailtoUrl;
+              setIsSending(true);
+
+              setTimeout(() => {
+                setIsSending(false);
+                setIsSent(true);
+
+                const body = `Name: ${name}\n\nMessage:\n${message}`;
+                const mailtoUrl = `mailto:jaswanthganta2005@outlook.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                
+                window.location.href = mailtoUrl;
+
+                setTimeout(() => setIsSent(false), 3000);
+              }, 1500);
             }}>
               <div className="space-y-2">
                 <label htmlFor="name" className="text-sm font-medium text-muted">Name</label>
@@ -195,10 +208,25 @@ export function Contact() {
               </div>
               <button
                 type="submit"
-                className="w-full flex items-center justify-center gap-2 bg-white text-black font-medium py-4 rounded-xl hover:bg-white/90 transition-colors mt-4"
+                disabled={isSending || isSent}
+                className="w-full flex items-center justify-center gap-2 bg-white text-black font-medium py-4 rounded-xl hover:bg-white/90 transition-colors mt-4 disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                <Send size={18} />
-                Send Message
+                {isSending ? (
+                  <>
+                    <Loader2 size={18} className="animate-spin" />
+                    Opening Mail Client...
+                  </>
+                ) : isSent ? (
+                  <>
+                    <CheckCircle2 size={18} className="text-green-600" />
+                    Opening...
+                  </>
+                ) : (
+                  <>
+                    <Send size={18} />
+                    Send Message
+                  </>
+                )}
               </button>
             </form>
           </div>
