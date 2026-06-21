@@ -20,11 +20,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Hide default cursor on devices with a mouse, as we use a custom JS cursor */
-@media (pointer: fine) {
-  *, *::before, *::after {
-    cursor: none !important;
-  }
+/* Force hide default cursor everywhere so only the custom JS cursor shows */
+html, body, *, *::before, *::after {
+  cursor: none !important;
 }
 
 /* Custom Scrollbar for premium feel */
