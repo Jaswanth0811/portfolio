@@ -40,13 +40,13 @@ export function Contact() {
 
                 {/* MAIN BORDER LAYER */}
                 <div className="absolute inset-0 overflow-hidden rounded-2xl pointer-events-none">
-                  <div className="absolute inset-0 border border-border transition-opacity duration-500 group-hover:opacity-0" />
+                  <div className="absolute inset-0 border border-border rounded-2xl transition-opacity duration-500 group-hover:opacity-0" />
                   <div className="absolute left-1/2 top-1/2 aspect-square w-[250%] -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,transparent_0_270deg,var(--glow-1)_360deg)] transition-opacity duration-500" />
                   <div className="absolute left-1/2 top-1/2 aspect-square w-[250%] -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_180deg,transparent_0_270deg,var(--glow-2)_360deg)] transition-opacity duration-500" />
                 </div>
 
                 {/* INNER CONTENT */}
-                <div className="relative z-10 m-[1.5px] flex items-center gap-4 h-[calc(100%-3px)] w-[calc(100%-3px)] bg-background rounded-[14.5px] p-4 overflow-hidden">
+                <div className="relative z-10 m-[1.5px] flex items-center gap-4 h-[calc(100%-3px)] w-[calc(100%-3px)] bg-card rounded-[14.5px] p-4 overflow-hidden">
                   <div className="bg-background/80 p-3 rounded-xl group-hover:scale-110 transition-transform duration-300">
                     <Mail className="text-foreground w-6 h-6" />
                   </div>
@@ -71,13 +71,13 @@ export function Contact() {
 
                 {/* MAIN BORDER LAYER */}
                 <div className="absolute inset-0 overflow-hidden rounded-2xl pointer-events-none">
-                  <div className="absolute inset-0 border border-border transition-opacity duration-500 group-hover:opacity-0" />
+                  <div className="absolute inset-0 border border-border rounded-2xl transition-opacity duration-500 group-hover:opacity-0" />
                   <div className="absolute left-1/2 top-1/2 aspect-square w-[250%] -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,transparent_0_270deg,var(--glow-1)_360deg)] transition-opacity duration-500" />
                   <div className="absolute left-1/2 top-1/2 aspect-square w-[250%] -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_180deg,transparent_0_270deg,var(--glow-2)_360deg)] transition-opacity duration-500" />
                 </div>
 
                 {/* INNER CONTENT */}
-                <div className="relative z-10 m-[1.5px] flex items-center gap-4 h-[calc(100%-3px)] w-[calc(100%-3px)] bg-background rounded-[14.5px] p-4 overflow-hidden">
+                <div className="relative z-10 m-[1.5px] flex items-center gap-4 h-[calc(100%-3px)] w-[calc(100%-3px)] bg-card rounded-[14.5px] p-4 overflow-hidden">
                   <div className="bg-background/80 p-3 rounded-xl group-hover:scale-110 transition-transform duration-300">
                     <Globe className="text-foreground w-6 h-6" />
                   </div>
@@ -102,13 +102,13 @@ export function Contact() {
 
                 {/* MAIN BORDER LAYER */}
                 <div className="absolute inset-0 overflow-hidden rounded-2xl pointer-events-none">
-                  <div className="absolute inset-0 border border-border transition-opacity duration-500 group-hover:opacity-0" />
+                  <div className="absolute inset-0 border border-border rounded-2xl transition-opacity duration-500 group-hover:opacity-0" />
                   <div className="absolute left-1/2 top-1/2 aspect-square w-[250%] -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,transparent_0_270deg,var(--glow-1)_360deg)] transition-opacity duration-500" />
                   <div className="absolute left-1/2 top-1/2 aspect-square w-[250%] -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_180deg,transparent_0_270deg,var(--glow-2)_360deg)] transition-opacity duration-500" />
                 </div>
 
                 {/* INNER CONTENT */}
-                <div className="relative z-10 m-[1.5px] flex items-center gap-4 h-[calc(100%-3px)] w-[calc(100%-3px)] bg-background rounded-[14.5px] p-4 overflow-hidden">
+                <div className="relative z-10 m-[1.5px] flex items-center gap-4 h-[calc(100%-3px)] w-[calc(100%-3px)] bg-card rounded-[14.5px] p-4 overflow-hidden">
                   <div className="bg-background/80 p-3 rounded-xl group-hover:scale-110 transition-transform duration-300">
                     <Code className="text-foreground w-6 h-6" />
                   </div>
@@ -133,13 +133,13 @@ export function Contact() {
 
                 {/* MAIN BORDER LAYER */}
                 <div className="absolute inset-0 overflow-hidden rounded-2xl pointer-events-none">
-                  <div className="absolute inset-0 border border-accent/20 transition-opacity duration-500 group-hover:opacity-0" />
+                  <div className="absolute inset-0 border border-accent/20 rounded-2xl transition-opacity duration-500 group-hover:opacity-0" />
                   <div className="absolute left-1/2 top-1/2 aspect-square w-[250%] -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,transparent_0_270deg,var(--glow-1)_360deg)] transition-opacity duration-500" />
                   <div className="absolute left-1/2 top-1/2 aspect-square w-[250%] -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_180deg,transparent_0_270deg,var(--glow-2)_360deg)] transition-opacity duration-500" />
                 </div>
 
                 {/* INNER CONTENT */}
-                <div className="relative z-10 m-[1.5px] flex items-center gap-4 h-[calc(100%-3px)] w-[calc(100%-3px)] bg-background rounded-[14.5px] p-4 overflow-hidden">
+                <div className="relative z-10 m-[1.5px] flex items-center gap-4 h-[calc(100%-3px)] w-[calc(100%-3px)] bg-card rounded-[14.5px] p-4 overflow-hidden">
                   <div className="bg-accent text-white p-3 rounded-xl group-hover:scale-110 transition-transform duration-300">
                     <Download className="w-6 h-6" />
                   </div>
