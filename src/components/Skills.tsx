@@ -60,8 +60,8 @@ export function Skills() {
                     {/* GLOW LAYER (Hollow Ring with Blur) */}
                     <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-[8px]">
                       <div className="absolute inset-0 overflow-hidden rounded-full">
-                        <div className="absolute left-1/2 top-1/2 aspect-square w-[300%] -translate-x-1/2 -translate-y-1/2 animate-[spin_2.5s_linear_infinite] bg-[conic-gradient(from_0deg,transparent_0_270deg,#3b82f6_360deg)]" />
-                        <div className="absolute left-1/2 top-1/2 aspect-square w-[300%] -translate-x-1/2 -translate-y-1/2 animate-[spin_2.5s_linear_infinite] bg-[conic-gradient(from_180deg,transparent_0_270deg,#60a5fa_360deg)]" />
+                        <div className="absolute left-1/2 top-1/2 aspect-square w-[300%] -translate-x-1/2 -translate-y-1/2 animate-[spin_2.5s_linear_infinite] bg-[conic-gradient(from_0deg,transparent_0_270deg,var(--glow-1)_360deg)]" />
+                        <div className="absolute left-1/2 top-1/2 aspect-square w-[300%] -translate-x-1/2 -translate-y-1/2 animate-[spin_2.5s_linear_infinite] bg-[conic-gradient(from_180deg,transparent_0_270deg,var(--glow-2)_360deg)]" />
                         <div className="absolute inset-[2px] rounded-full bg-background" />
                       </div>
                     </div>
@@ -72,9 +72,9 @@ export function Skills() {
                       <div className="absolute inset-0 bg-white/10 transition-opacity duration-300 group-hover:opacity-0" />
                       
                       {/* Spinning Borders */}
-                      <div className="absolute left-1/2 top-1/2 aspect-square w-[300%] -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 animate-[spin_2.5s_linear_infinite] bg-[conic-gradient(from_0deg,transparent_0_270deg,#3b82f6_360deg)] transition-opacity duration-300" />
+                      <div className="absolute left-1/2 top-1/2 aspect-square w-[300%] -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 animate-[spin_2.5s_linear_infinite] bg-[conic-gradient(from_0deg,transparent_0_270deg,var(--glow-1)_360deg)] transition-opacity duration-300" />
                       
-                      <div className="absolute left-1/2 top-1/2 aspect-square w-[300%] -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 animate-[spin_2.5s_linear_infinite] bg-[conic-gradient(from_180deg,transparent_0_270deg,#60a5fa_360deg)] transition-opacity duration-300" />
+                      <div className="absolute left-1/2 top-1/2 aspect-square w-[300%] -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 animate-[spin_2.5s_linear_infinite] bg-[conic-gradient(from_180deg,transparent_0_270deg,var(--glow-2)_360deg)] transition-opacity duration-300" />
                     </div>
                     
                     {/* INNER PILL CONTENT */}

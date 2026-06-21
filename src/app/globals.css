@@ -6,7 +6,9 @@
   --card: #FFFFFF;
   --border: rgba(0, 0, 0, 0.08);
   --muted: #4B5563;
-  --accent: #2563EB;
+  --accent: #111827;
+  --glow-1: #111827;
+  --glow-2: #4B5563;
 }
 
 :root.dark,
@@ -17,6 +19,8 @@ html.dark {
   --border: rgba(255, 255, 255, 0.08);
   --muted: #A1A1AA;
   --accent: #3B82F6;
+  --glow-1: #3b82f6;
+  --glow-2: #60a5fa;
 }
 
 @theme inline {
@@ -289,6 +293,28 @@ html:not(.dark) {
 
   /* Specific widgets overrides */
   .selection\:bg-accent\/30 {
-    background-color: rgba(37, 99, 235, 0.15) !important;
+    background-color: rgba(17, 24, 39, 0.15) !important;
+  }
+
+  /* Overrides for hardcoded blue rgb shadows in light mode */
+  .shadow-\[0_0_15px_rgba\(59\,130\,246\,0\.5\)\] {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1) !important;
+  }
+  .shadow-\[0_0_20px_rgba\(59\,130\,246\,0\.3\)\] {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.08) !important;
+  }
+  .hover\:shadow-\[0_0_30px_rgba\(59\,130\,246\,0\.5\)\]:hover {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.15) !important;
+  }
+  .group-hover\:shadow-\[0_0_20px_rgba\(59\,130\,246\,0\.15\)\] {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05) !important;
+  }
+  .shadow-\[0_0_10px_rgba\(59\,130\,246\,0\.15\)\] {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05) !important;
+  }
+
+  /* Remove blue text hover glow from navigation links in light mode */
+  header nav a {
+    text-shadow: none !important;
   }
 }
