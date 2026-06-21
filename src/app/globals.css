@@ -88,3 +88,110 @@ body {
   display: inline-block;
   animation: sparkle 1.2s ease-in-out infinite;
 }
+
+/* ==========================================
+   Custom Windows 11 Concept Cursors
+   ========================================== */
+
+/* Light Theme (uses dark cursors) */
+html, body {
+  cursor: url('/cursors/dark/arrow.cur'), auto;
+}
+
+/* Interactive elements */
+a, 
+button, 
+[role="button"], 
+select, 
+summary, 
+input[type="submit"], 
+input[type="button"], 
+.cursor-pointer,
+a *,
+button *,
+[role="button"] * {
+  cursor: url('/cursors/dark/hand.cur'), pointer !important;
+}
+
+/* Text fields */
+input:not([type="submit"]):not([type="button"]):not([type="image"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]):not([type="file"]), 
+textarea, 
+[contenteditable="true"], 
+.cursor-text {
+  cursor: url('/cursors/dark/ibeam.cur'), text !important;
+}
+
+/* Not allowed / disabled */
+[disabled], 
+.disabled, 
+[aria-disabled="true"], 
+.cursor-not-allowed {
+  cursor: url('/cursors/dark/no.cur'), not-allowed !important;
+}
+
+/* Help */
+.help, 
+.cursor-help {
+  cursor: url('/cursors/dark/help.cur'), help !important;
+}
+
+/* Utility cursors mapping */
+.cursor-crosshair { cursor: url('/cursors/dark/crosshair.cur'), crosshair !important; }
+.cursor-move { cursor: url('/cursors/dark/sizeall.cur'), move !important; }
+.cursor-nesw-resize { cursor: url('/cursors/dark/sizenesw.cur'), nesw-resize !important; }
+.cursor-ns-resize { cursor: url('/cursors/dark/sizens.cur'), ns-resize !important; }
+.cursor-nwse-resize { cursor: url('/cursors/dark/sizenwse.cur'), nwse-resize !important; }
+.cursor-ew-resize { cursor: url('/cursors/dark/sizewe.cur'), ew-resize !important; }
+
+
+/* Dark Theme (uses light cursors) */
+html.dark, 
+html.dark body {
+  cursor: url('/cursors/light/arrow.cur'), auto;
+}
+
+/* Interactive elements */
+html.dark a, 
+html.dark button, 
+html.dark [role="button"], 
+html.dark select, 
+html.dark summary, 
+html.dark input[type="submit"], 
+html.dark input[type="button"], 
+html.dark .cursor-pointer,
+html.dark a *,
+html.dark button *,
+html.dark [role="button"] * {
+  cursor: url('/cursors/light/hand.cur'), pointer !important;
+}
+
+/* Text fields */
+html.dark input:not([type="submit"]):not([type="button"]):not([type="image"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]):not([type="file"]), 
+html.dark textarea, 
+html.dark [contenteditable="true"], 
+html.dark .cursor-text {
+  cursor: url('/cursors/light/ibeam.cur'), text !important;
+}
+
+/* Not allowed / disabled */
+html.dark [disabled], 
+html.dark .disabled, 
+html.dark [aria-disabled="true"], 
+html.dark .cursor-not-allowed {
+  cursor: url('/cursors/light/no.cur'), not-allowed !important;
+}
+
+/* Help */
+html.dark .help, 
+html.dark .cursor-help {
+  cursor: url('/cursors/light/help.cur'), help !important;
+}
+
+/* Utility cursors mapping */
+html.dark .cursor-crosshair { cursor: url('/cursors/light/crosshair.cur'), crosshair !important; }
+html.dark .cursor-move { cursor: url('/cursors/light/sizeall.cur'), move !important; }
+html.dark .cursor-nesw-resize { cursor: url('/cursors/light/sizenesw.cur'), nesw-resize !important; }
+html.dark .cursor-ns-resize { cursor: url('/cursors/light/sizens.cur'), ns-resize !important; }
+html.dark .cursor-nwse-resize { cursor: url('/cursors/light/sizenwse.cur'), nwse-resize !important; }
+html.dark .cursor-ew-resize { cursor: url('/cursors/light/sizewe.cur'), ew-resize !important; }
+
