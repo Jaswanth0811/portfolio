@@ -5,11 +5,10 @@ import { motion } from "framer-motion";
 
 export default function CustomCursor() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isHovering, setIsHovering] = useState(false);
+  const [hoverBox, setHoverBox] = useState<{ x: number, y: number, w: number, h: number, r: number } | null>(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Hide on touch devices
     if (window.matchMedia("(pointer: coarse)").matches) return;
 
     const handleMouseMove = (e: MouseEvent) => {
@@ -19,32 +18,42 @@ export default function CustomCursor() {
 
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      if (
-        target.tagName.toLowerCase() === "a" ||
-        target.tagName.toLowerCase() === "button" ||
-        target.closest("a") ||
-        target.closest("button") ||
-        target.closest("[role='button']") ||
-        target.tagName.toLowerCase() === "input" ||
-        target.tagName.toLowerCase() === "textarea"
-      ) {
-        setIsHovering(true);
+      const clickable = target.closest("a") || target.closest("button") || target.closest("[role='button']");
+      
+      if (clickable) {
+        const rect = clickable.getBoundingClientRect();
+        const style = window.getComputedStyle(clickable);
+        const radius = parseFloat(style.borderRadius) || 8;
+        
+        setHoverBox({
+          x: rect.left,
+          y: rect.top,
+          w: rect.width,
+          h: rect.height,
+          r: radius
+        });
       } else {
-        setIsHovering(false);
+        setHoverBox(null);
       }
+    };
+
+    const handleScroll = () => {
+      setHoverBox(null);
     };
 
     const handleMouseLeave = () => setIsVisible(false);
     const handleMouseEnter = () => setIsVisible(true);
 
     window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("mouseover", handleMouseOver);
+    window.addEventListener("mouseover", handleMouseOver, { capture: true });
+    window.addEventListener("scroll", handleScroll, { passive: true });
     document.addEventListener("mouseleave", handleMouseLeave);
     document.addEventListener("mouseenter", handleMouseEnter);
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("mouseover", handleMouseOver);
+      window.removeEventListener("mouseover", handleMouseOver, { capture: true });
+      window.removeEventListener("scroll", handleScroll);
       document.removeEventListener("mouseleave", handleMouseLeave);
       document.removeEventListener("mouseenter", handleMouseEnter);
     };
@@ -54,45 +63,48 @@ export default function CustomCursor() {
 
   return (
     <>
-      {/* Central precise dot */}
+      {/* Tiny solid dot that always follows exactly */}
       <motion.div
-        className="fixed top-0 left-0 w-1.5 h-1.5 bg-accent rounded-full pointer-events-none z-[10000]"
+        className="fixed top-0 left-0 w-2 h-2 bg-accent rounded-full pointer-events-none z-[10000]"
         animate={{
-          x: mousePosition.x - 3,
-          y: mousePosition.y - 3,
-          scale: isHovering ? 0 : 1, // Dot disappears on hover
+          x: mousePosition.x - 4,
+          y: mousePosition.y - 4,
+          opacity: hoverBox ? 0 : 1 
         }}
         transition={{ type: "tween", ease: "linear", duration: 0 }}
       />
 
-      {/* Mechanical Crosshair Reticle */}
+      {/* The Magnetic Bubble */}
       <motion.div
-        className="fixed top-0 left-0 w-8 h-8 pointer-events-none z-[9999]"
-        animate={{
-          x: mousePosition.x - 16,
-          y: mousePosition.y - 16,
-          rotate: isHovering ? 45 : 0, // Snaps 45 degrees into an 'X' on hover
-          scale: isHovering ? 1.4 : 1, // Expands slightly
+        className="fixed top-0 left-0 pointer-events-none z-[9990] backdrop-invert-[0.1]"
+        style={{
+          background: hoverBox ? "rgba(59, 130, 246, 0.1)" : "rgba(59, 130, 246, 0.3)",
+          border: hoverBox ? "1px solid rgba(59, 130, 246, 0.5)" : "0px solid rgba(59, 130, 246, 0)",
         }}
+        animate={
+          hoverBox
+            ? {
+                x: hoverBox.x - 6, 
+                y: hoverBox.y - 6,
+                width: hoverBox.w + 12,
+                height: hoverBox.h + 12,
+                borderRadius: hoverBox.r + 6,
+              }
+            : {
+                x: mousePosition.x - 16,
+                y: mousePosition.y - 16,
+                width: 32,
+                height: 32,
+                borderRadius: 16,
+              }
+        }
         transition={{
-          x: { type: "spring", stiffness: 800, damping: 28, mass: 0.5 },
-          y: { type: "spring", stiffness: 800, damping: 28, mass: 0.5 },
-          rotate: { type: "spring", stiffness: 300, damping: 20 },
-          scale: { type: "spring", stiffness: 300, damping: 20 },
+          type: "spring",
+          stiffness: 400,
+          damping: 28,
+          mass: 0.5,
         }}
-      >
-        {/* Subtle circular boundary */}
-        <div className="absolute inset-0 rounded-full border border-accent/30" />
-        
-        {/* Top tick */}
-        <div className="absolute top-[-4px] left-1/2 -translate-x-1/2 w-[1.5px] h-3 bg-accent" />
-        {/* Bottom tick */}
-        <div className="absolute bottom-[-4px] left-1/2 -translate-x-1/2 w-[1.5px] h-3 bg-accent" />
-        {/* Left tick */}
-        <div className="absolute left-[-4px] top-1/2 -translate-y-1/2 w-3 h-[1.5px] bg-accent" />
-        {/* Right tick */}
-        <div className="absolute right-[-4px] top-1/2 -translate-y-1/2 w-3 h-[1.5px] bg-accent" />
-      </motion.div>
+      />
     </>
   );
 }
