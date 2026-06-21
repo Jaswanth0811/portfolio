@@ -66,9 +66,9 @@ export function Skills() {
                     {/* Second Revolving Glow Border (Also Clockwise, starting at 180deg) */}
                     <div className="absolute left-1/2 top-1/2 aspect-square w-[300%] -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 animate-[spin_2.5s_linear_infinite] bg-[conic-gradient(from_180deg,transparent_0_270deg,#60a5fa_360deg)] transition-opacity duration-300" />
                     
-                    {/* Inner Pill with Shiny Text */}
+                    {/* Inner Pill */}
                     <div className="relative z-10 flex h-full w-full items-center justify-center rounded-full bg-[#0a0a0a] px-4 py-2 text-sm font-medium transition-colors duration-300 group-hover:shadow-[0_0_15px_rgba(59,130,246,0.3)]">
-                      <span className="text-muted transition-colors duration-300 shiny-text-hover">
+                      <span className="text-muted transition-all duration-300 group-hover:text-white group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]">
                         {skill}
                       </span>
                     </div>
