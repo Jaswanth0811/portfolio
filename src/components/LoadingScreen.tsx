@@ -16,7 +16,7 @@ export default function LoadingScreen({ children }: { children: React.ReactNode 
       
       const timer = setTimeout(() => {
         setIsLoading(false);
-      }, 5000);
+      }, 1000);
       return () => clearTimeout(timer);
     } else {
       setIsFirstVisit(false);
