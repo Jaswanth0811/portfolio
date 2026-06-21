@@ -56,8 +56,9 @@ export function Contact() {
               </a>
 
               <a
-                href="/Jaswanth Ganta Resume.pdf"
-                download
+                href="https://res.cloudinary.com/dwxiibqcw/image/upload/v1781976682/Jaswanth_Ganta_Resume_fhxbrn.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 bg-accent/10 border border-accent/20 rounded-2xl hover:bg-accent/20 transition-all duration-300 group"
               >
                 <div className="bg-accent text-white p-3 rounded-xl group-hover:scale-110 transition-transform">

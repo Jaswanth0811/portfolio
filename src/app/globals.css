@@ -18,6 +18,11 @@ body {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  cursor: url('/cursor-default.svg') 5 2, auto;
+}
+
+a, button, [role="button"], input, select, textarea {
+  cursor: url('/cursor-pointer.svg') 12 3, pointer;
 }
 
 /* Custom Scrollbar for premium feel */
