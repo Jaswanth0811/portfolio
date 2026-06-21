@@ -1,15 +1,19 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, useMotionValue, useMotionTemplate } from "framer-motion";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 
 export default function CustomCursor() {
   const [isVisible, setIsVisible] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
   
-  // useMotionValue allows us to track the mouse outside of React's render cycle
-  // This provides buttery smooth 144hz tracking with zero lag or jitter.
+  // High-performance tracking for zero lag
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
+
+  // Add a very tight spring so it feels fluid but instantly responsive
+  const springX = useSpring(mouseX, { stiffness: 1000, damping: 40, mass: 0.1 });
+  const springY = useSpring(mouseY, { stiffness: 1000, damping: 40, mass: 0.1 });
 
   useEffect(() => {
     // Disable on touch devices
@@ -21,45 +25,62 @@ export default function CustomCursor() {
       if (!isVisible) setIsVisible(true);
     };
 
+    const handleMouseOver = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (
+        target.tagName.toLowerCase() === "a" ||
+        target.tagName.toLowerCase() === "button" ||
+        target.closest("a") ||
+        target.closest("button") ||
+        target.closest("[role='button']") ||
+        target.tagName.toLowerCase() === "input" ||
+        target.tagName.toLowerCase() === "textarea"
+      ) {
+        setIsHovering(true);
+      } else {
+        setIsHovering(false);
+      }
+    };
+
     const handleMouseLeave = () => setIsVisible(false);
     const handleMouseEnter = () => setIsVisible(true);
 
     window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mouseover", handleMouseOver);
     document.addEventListener("mouseleave", handleMouseLeave);
     document.addEventListener("mouseenter", handleMouseEnter);
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mouseover", handleMouseOver);
       document.removeEventListener("mouseleave", handleMouseLeave);
       document.removeEventListener("mouseenter", handleMouseEnter);
     };
   }, [isVisible, mouseX, mouseY]);
 
-  // Create a high-performance string template for the spotlight gradient
-  const background = useMotionTemplate`radial-gradient(800px circle at ${mouseX}px ${mouseY}px, rgba(59,130,246,0.12), transparent 80%)`;
-  
-  // Calculate the dot position
-  const dotX = useMotionTemplate`calc(${mouseX}px - 4px)`;
-  const dotY = useMotionTemplate`calc(${mouseY}px - 4px)`;
-
   if (!isVisible) return null;
 
   return (
-    <>
-      {/* Precise Center Dot */}
-      <motion.div
-        className="fixed top-0 left-0 w-2 h-2 bg-white rounded-full pointer-events-none z-[10000] mix-blend-difference"
-        style={{
-          x: dotX,
-          y: dotY,
-        }}
-      />
-
-      {/* Interactive Spotlight Overlay */}
-      <motion.div
-        className="fixed inset-0 pointer-events-none z-[9990]"
-        style={{ background }}
-      />
-    </>
+    <motion.div
+      className="fixed top-0 left-0 rounded-full pointer-events-none z-[10000]"
+      style={{
+        x: springX,
+        y: springY,
+        translateX: "-50%",
+        translateY: "-50%",
+      }}
+      animate={{
+        width: isHovering ? 8 : 20, // Shrinks to a point
+        height: isHovering ? 8 : 20,
+        backgroundColor: isHovering ? "#000000" : "#FFFFFF", // Turns black
+        border: isHovering ? "1px solid rgba(255,255,255,0.3)" : "0px solid transparent", // Faint border so you don't lose the black dot on a dark background
+      }}
+      transition={{
+        type: "spring",
+        stiffness: 500,
+        damping: 25,
+        mass: 0.5,
+      }}
+    />
   );
 }
