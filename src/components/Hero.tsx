@@ -64,22 +64,22 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8 w-full px-4 sm:px-0"
           >
             <a
               href="https://res.cloudinary.com/dwxiibqcw/image/upload/v1781976682/Jaswanth_Ganta_Resume_fhxbrn.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center justify-center gap-2 bg-accent text-white px-8 py-4 rounded-full font-semibold w-full sm:w-auto hover:bg-accent/90 transition-all duration-300 shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:shadow-[0_0_30px_rgba(59,130,246,0.5)]"
+              className="group flex items-center justify-center gap-2 bg-accent text-white px-6 py-3.5 sm:px-8 sm:py-4 rounded-full font-semibold w-full max-w-[260px] sm:max-w-none sm:w-auto hover:bg-accent/90 transition-all duration-300 shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:shadow-[0_0_30px_rgba(59,130,246,0.5)] text-sm sm:text-base"
             >
-              <Download size={20} className="group-hover:-translate-y-1 transition-transform" />
+              <Download className="w-[18px] h-[18px] sm:w-5 sm:h-5 group-hover:-translate-y-1 transition-transform" />
               Download Resume
             </a>
             <a
               href="#contact"
-              className="flex items-center justify-center gap-2 bg-transparent text-white border border-white/20 px-8 py-4 rounded-full font-semibold w-full sm:w-auto hover:bg-white/5 transition-colors duration-300"
+              className="flex items-center justify-center gap-2 bg-transparent text-white border border-white/20 px-6 py-3.5 sm:px-8 sm:py-4 rounded-full font-semibold w-full max-w-[260px] sm:max-w-none sm:w-auto hover:bg-white/5 transition-colors duration-300 text-sm sm:text-base"
             >
-              <Mail size={20} />
+              <Mail className="w-[18px] h-[18px] sm:w-5 sm:h-5" />
               Contact Me
             </a>
           </motion.div>
