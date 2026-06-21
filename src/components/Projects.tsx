@@ -112,7 +112,7 @@ export function Projects() {
                 <div className="relative z-10">
                   {project.tags?.includes("Created entirely using AI") && (
                     <div className="mb-4">
-                      <span className="inline-flex items-center text-[10px] sm:text-xs font-bold text-accent bg-accent/10 border border-accent/20 px-3 py-1.5 rounded-full uppercase tracking-wider shadow-[0_0_10px_rgba(59,130,246,0.15)]">
+                      <span className="ai-badge inline-flex items-center text-[10px] sm:text-xs font-bold text-accent bg-accent/10 border border-accent/20 px-3 py-1.5 rounded-full uppercase tracking-wider shadow-[0_0_10px_rgba(59,130,246,0.15)]">
                         ✨ Created entirely using AI
                       </span>
                     </div>
@@ -169,7 +169,7 @@ export function Projects() {
               
               {selectedProject.tags?.includes("Created entirely using AI") && (
                 <div className="mb-6">
-                  <span className="inline-flex items-center text-xs font-bold text-accent bg-accent/10 border border-accent/20 px-4 py-1.5 rounded-full uppercase tracking-wider">
+                  <span className="ai-badge inline-flex items-center text-xs font-bold text-accent bg-accent/10 border border-accent/20 px-4 py-1.5 rounded-full uppercase tracking-wider">
                     ✨ Created entirely using AI
                   </span>
                 </div>
