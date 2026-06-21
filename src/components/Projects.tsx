@@ -67,12 +67,36 @@ export function Projects() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {PROJECTS.map((project) => (
-            <div
+            <motion.div
               key={project.title}
+              whileHover="hover"
+              initial="rest"
+              animate="rest"
               onClick={() => setSelectedProject(project)}
-              className="group cursor-pointer flex flex-col justify-between bg-card border border-border rounded-[24px] p-8 shadow-lg hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(59,130,246,0.4)] hover:border-accent/50 transition-all duration-500"
+              className="relative inline-flex flex-col w-full rounded-[24px] cursor-pointer group transition-all duration-500 hover:-translate-y-2"
             >
-              <div>
+              {/* GLOW LAYER (Hollow Ring with Blur) */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-[12px] pointer-events-none">
+                <div className="absolute inset-0 overflow-hidden rounded-[24px]">
+                  <div className="absolute left-1/2 top-1/2 aspect-square w-[250%] -translate-x-1/2 -translate-y-1/2 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,transparent_0_270deg,#3b82f6_360deg)]" />
+                  <div className="absolute left-1/2 top-1/2 aspect-square w-[250%] -translate-x-1/2 -translate-y-1/2 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_180deg,transparent_0_270deg,#60a5fa_360deg)]" />
+                  <div className="absolute inset-[2px] rounded-[24px] bg-black" />
+                </div>
+              </div>
+
+              {/* MAIN BORDER LAYER (Crisp) */}
+              <div className="absolute inset-0 overflow-hidden rounded-[24px] pointer-events-none">
+                {/* Default Border */}
+                <div className="absolute inset-0 border border-border transition-opacity duration-500 group-hover:opacity-0" />
+                
+                {/* Spinning Borders */}
+                <div className="absolute left-1/2 top-1/2 aspect-square w-[250%] -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,transparent_0_270deg,#3b82f6_360deg)] transition-opacity duration-500" />
+                <div className="absolute left-1/2 top-1/2 aspect-square w-[250%] -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_180deg,transparent_0_270deg,#60a5fa_360deg)] transition-opacity duration-500" />
+              </div>
+
+              {/* INNER CARD CONTENT */}
+              <div className="relative z-10 m-[1.5px] flex flex-col justify-between h-[calc(100%-3px)] w-[calc(100%-3px)] bg-[#111111] rounded-[22.5px] p-8 overflow-hidden shadow-lg">
+                <div>
                 {/* Abstract background gradient */}
                 <div className="absolute -top-24 -right-24 w-48 h-48 bg-accent/5 rounded-full blur-3xl group-hover:bg-accent/20 transition-all duration-700"></div>
                 
@@ -109,7 +133,8 @@ export function Projects() {
                   </span>
                 ))}
               </div>
-            </div>
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>
