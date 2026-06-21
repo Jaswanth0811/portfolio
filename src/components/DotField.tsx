@@ -118,8 +118,11 @@ export default function DotField({
         dot.currentX += (targetX - dot.currentX) * 0.15;
         dot.currentY += (targetY - dot.currentY) * 0.15;
 
-        const brightness = Math.min(1, 0.2 + (dot.currentSize - dot.baseSize) * 0.15);
-        ctx.fillStyle = `rgba(255, 255, 255, ${brightness})`;
+        const isDark = typeof document !== 'undefined' && document.documentElement.classList.contains('dark');
+        const colorBase = isDark ? '255, 255, 255' : '0, 0, 0';
+        const opacityBase = isDark ? 0.2 : 0.12;
+        const brightness = Math.min(1, opacityBase + (dot.currentSize - dot.baseSize) * 0.15);
+        ctx.fillStyle = `rgba(${colorBase}, ${brightness})`;
 
         ctx.beginPath();
         ctx.arc(dot.currentX, dot.currentY, dot.currentSize, 0, Math.PI * 2);

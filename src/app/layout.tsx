@@ -24,8 +24,35 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${inter.className} h-full antialiased dark`}
+      className={`${inter.variable} ${inter.className} h-full antialiased`}
+      suppressHydrationWarning
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  const query = window.matchMedia('(prefers-color-scheme: dark)');
+                  function update(e) {
+                    if (e.matches) {
+                      document.documentElement.classList.add('dark');
+                    } else {
+                      document.documentElement.classList.remove('dark');
+                    }
+                  }
+                  update(query);
+                  if (typeof query.addEventListener === 'function') {
+                    query.addEventListener('change', update);
+                  } else if (typeof query.addListener === 'function') {
+                    query.addListener(update);
+                  }
+                } catch (e) {}
+              })();
+            `
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col bg-background text-foreground selection:bg-accent/30 selection:text-white">
         <ClickSparkle />
         <AntiDownload />
