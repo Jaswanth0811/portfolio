@@ -54,42 +54,20 @@ export default function CustomCursor() {
   if (!isVisible) return null;
 
   return (
-    <>
-      {/* Sharp Inner Dot so user knows exactly where the cursor is */}
-      <motion.div
-        className="fixed top-0 left-0 w-2 h-2 bg-white rounded-full pointer-events-none z-[9999] mix-blend-difference"
-        animate={{
-          x: mousePosition.x - 4,
-          y: mousePosition.y - 4,
-          scale: isHovering ? 0.5 : 1,
-        }}
-        transition={{
-          type: "tween",
-          ease: "linear",
-          duration: 0,
-        }}
-      />
-
-      {/* Glowing Neon Orb */}
-      <motion.div
-        className="fixed top-0 left-0 w-80 h-80 rounded-full pointer-events-none z-[9990] mix-blend-screen"
-        style={{
-          background: "radial-gradient(circle, rgba(59,130,246,0.15) 0%, rgba(59,130,246,0) 70%)",
-          filter: "blur(40px)",
-        }}
-        animate={{
-          x: mousePosition.x - 160,
-          y: mousePosition.y - 160,
-          scale: isHovering ? 1.2 : 1,
-          opacity: isHovering ? 0.8 : 0.5,
-        }}
-        transition={{
-          type: "spring",
-          stiffness: 100,
-          damping: 20,
-          mass: 0.8,
-        }}
-      />
-    </>
+    <motion.div
+      className="fixed top-0 left-0 bg-white rounded-full pointer-events-none z-[9999] mix-blend-difference"
+      animate={{
+        x: mousePosition.x - (isHovering ? 32 : 16),
+        y: mousePosition.y - (isHovering ? 32 : 16),
+        width: isHovering ? 64 : 32,
+        height: isHovering ? 64 : 32,
+      }}
+      transition={{
+        type: "spring",
+        stiffness: 400,
+        damping: 28,
+        mass: 0.5,
+      }}
+    />
   );
 }
