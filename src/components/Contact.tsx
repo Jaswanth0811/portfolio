@@ -152,11 +152,10 @@ export function Contact() {
               e.preventDefault();
               const formData = new FormData(e.currentTarget);
               const name = formData.get("name") as string;
-              const email = formData.get("email") as string;
               const subject = formData.get("subject") as string;
               const message = formData.get("message") as string;
               
-              const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+              const body = `Name: ${name}\n\nMessage:\n${message}`;
               const mailtoUrl = `mailto:jaswanthganta2005@outlook.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
               
               window.location.href = mailtoUrl;
@@ -169,17 +168,6 @@ export function Contact() {
                   name="name"
                   className="w-full bg-background border border-border rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all"
                   placeholder="Your name"
-                  required
-                />
-              </div>
-              <div className="space-y-2">
-                <label htmlFor="email" className="text-sm font-medium text-muted">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  className="w-full bg-background border border-border rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all"
-                  placeholder="Your email address"
                   required
                 />
               </div>
