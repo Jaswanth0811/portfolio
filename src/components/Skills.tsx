@@ -55,7 +55,7 @@ export function Skills() {
                       rest: { scale: 1 },
                       hover: { scale: 1.1 },
                     }}
-                    className="relative inline-flex overflow-hidden rounded-full p-[1.5px] cursor-pointer group"
+                    className="relative inline-flex overflow-hidden rounded-full p-[1.5px] cursor-pointer group transition-all duration-300 hover:shadow-[0_0_25px_rgba(59,130,246,0.8)]"
                   >
                     {/* Default Border (visible when not hovered) */}
                     <div className="absolute inset-0 bg-white/10 transition-opacity duration-300 group-hover:opacity-0" />
