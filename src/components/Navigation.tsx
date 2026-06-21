@@ -48,7 +48,7 @@ export function Navigation() {
         <a
           href="#home"
           onClick={(e) => { e.preventDefault(); handleLinkClick("#home"); }}
-          className="text-xl md:text-2xl font-bold tracking-tight text-white hover:text-accent transition-colors flex items-center gap-2"
+          className="text-xl md:text-2xl font-bold tracking-tight text-foreground hover:text-accent transition-colors flex items-center gap-2"
         >
           {/* A small abstract logo icon like React Bits could go here if wanted, for now just the text */}
           JG.
@@ -75,7 +75,7 @@ export function Navigation() {
 
         {/* Mobile Nav Toggle */}
         <button
-          className="lg:hidden text-white"
+          className="lg:hidden text-foreground"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
         >

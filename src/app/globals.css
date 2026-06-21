@@ -231,12 +231,23 @@ html:not(.dark) {
     color: #FFFFFF !important;
   }
 
-  /* Force hardcoded dark container/card backgrounds to use the light card variable */
-  .bg-\[\#111111\],
-  .bg-\[\#111111\]\/90,
-  .bg-\[\#111111\]\/80,
-  .bg-\[\#111111\]\/50 {
+  /* Force hardcoded dark container/card backgrounds to use the light card variable with alpha */
+  .bg-\[\#111111\] {
     background-color: var(--color-card) !important;
+  }
+  .bg-\[\#111111\]\/90 {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+  }
+  .bg-\[\#111111\]\/80 {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+  }
+  .bg-\[\#111111\]\/50 {
+    background-color: rgba(255, 255, 255, 0.5) !important;
+  }
+
+  /* Override hardcoded dark shadows with soft, high-premium light shadows */
+  .shadow-\[0_8px_32px_rgba\(0\,0\,0\,0\.5\)\] {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08) !important;
   }
 
   /* Overrides for hardcoded semi-transparent white backgrounds */
