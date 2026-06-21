@@ -18,6 +18,8 @@ body {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
 /* Hide default cursor on devices with a mouse, as we use a custom JS cursor */
 @media (pointer: fine) {
   *, *::before, *::after {
