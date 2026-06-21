@@ -22,7 +22,7 @@ export function Contact() {
             <h3 className="text-2xl font-semibold text-white">Get in Touch</h3>
             <div className="flex flex-col gap-4">
               <a
-                href="mailto:contact@example.com"
+                href="mailto:jaswanthganta2005@outlook.com"
                 className="relative inline-flex flex-col w-full rounded-2xl cursor-pointer group transition-all duration-500 hover:-translate-y-2"
               >
                 {/* GLOW LAYER */}
@@ -148,7 +148,19 @@ export function Contact() {
           {/* Contact Form */}
           <div className="bg-card border border-border rounded-[24px] p-8 shadow-xl">
             <h3 className="text-2xl font-semibold text-white mb-6">Send a Message</h3>
-            <form className="space-y-4" action="mailto:contact@example.com" method="POST" encType="text/plain">
+            <form className="space-y-4" onSubmit={(e) => {
+              e.preventDefault();
+              const formData = new FormData(e.currentTarget);
+              const name = formData.get("name") as string;
+              const email = formData.get("email") as string;
+              const subject = formData.get("subject") as string;
+              const message = formData.get("message") as string;
+              
+              const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+              const mailtoUrl = `mailto:jaswanthganta2005@outlook.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+              
+              window.location.href = mailtoUrl;
+            }}>
               <div className="space-y-2">
                 <label htmlFor="name" className="text-sm font-medium text-muted">Name</label>
                 <input
@@ -168,6 +180,17 @@ export function Contact() {
                   name="email"
                   className="w-full bg-background border border-border rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all"
                   placeholder="Your email address"
+                  required
+                />
+              </div>
+              <div className="space-y-2">
+                <label htmlFor="subject" className="text-sm font-medium text-muted">Subject</label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  className="w-full bg-background border border-border rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all"
+                  placeholder="Subject of your message"
                   required
                 />
               </div>
