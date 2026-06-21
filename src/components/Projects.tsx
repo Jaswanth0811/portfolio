@@ -70,7 +70,7 @@ export function Projects() {
             <div
               key={project.title}
               onClick={() => setSelectedProject(project)}
-              className="group cursor-pointer flex flex-col justify-between bg-card border border-border rounded-[24px] p-8 shadow-lg hover:-translate-y-2 hover:shadow-2xl hover:border-white/20 transition-all duration-500"
+              className="group cursor-pointer flex flex-col justify-between bg-card border border-border rounded-[24px] p-8 shadow-lg hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(59,130,246,0.4)] hover:border-accent/50 transition-all duration-500"
             >
               <div>
                 {/* Abstract background gradient */}
@@ -93,7 +93,7 @@ export function Projects() {
                       </span>
                     </div>
                   )}
-                  <h3 className="text-xl md:text-2xl font-bold text-white mb-4 group-hover:text-accent transition-colors pr-8">
+                  <h3 className="text-xl md:text-2xl font-bold text-white mb-4 origin-left group-hover:scale-105 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)] transition-all duration-300 pr-8">
                     {project.title}
                   </h3>
                 </div>
@@ -103,7 +103,7 @@ export function Projects() {
                 {project.tech.map((t) => (
                   <span
                     key={t}
-                    className="text-xs font-medium text-white/70 bg-white/5 border border-white/10 px-3 py-1.5 rounded-full"
+                    className="inline-block text-xs font-medium text-white/70 bg-white/5 border border-white/10 px-3 py-1.5 rounded-full group-hover:text-white group-hover:scale-110 group-hover:border-white/40 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)] transition-all duration-300"
                   >
                     {t}
                   </span>
