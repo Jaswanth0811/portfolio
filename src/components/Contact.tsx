@@ -26,7 +26,7 @@ export function Contact() {
             <h3 className="text-2xl font-semibold text-white">Get in Touch</h3>
             <div className="flex flex-col gap-4">
               <a
-                href="mailto:jaswanthganta2005@outlook.com"
+                href="mailto:jaswanthganta0811@gmail.com"
                 className="relative inline-flex flex-col w-full rounded-2xl cursor-pointer group transition-all duration-500 hover:-translate-y-2"
               >
                 {/* GLOW LAYER */}
@@ -166,7 +166,7 @@ export function Contact() {
                 setIsSent(true);
 
                 const body = `Name: ${name}\n\nMessage:\n${message}`;
-                const mailtoUrl = `mailto:jaswanthganta2005@outlook.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                const mailtoUrl = `mailto:jaswanthganta0811@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
                 
                 window.location.href = mailtoUrl;
 
