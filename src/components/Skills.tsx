@@ -23,7 +23,7 @@ const SKILL_CATEGORIES = [
   },
   {
     title: "Languages",
-    skills: ["Telugu", "English"],
+    skills: ["Telugu", "English", "Hindi"],
   },
 ];
 

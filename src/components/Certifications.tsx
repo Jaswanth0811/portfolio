@@ -7,7 +7,9 @@ const CERTIFICATIONS = [
   "Deloitte Australia • Data Analytics Job Simulation",
   "Deloitte Australia - Cyber Job Simulation",
   "Infosys Springboard • Introduction to JVM Languages • JVM, Java. Scala",
-  "3D Printing",
+  "3D Printing - RVS Globe",
+  "SolidWorks - Skill Dzire",
+  "RPA - CSC India",
 ];
 
 const ACHIEVEMENTS = [

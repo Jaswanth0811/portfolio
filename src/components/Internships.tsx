@@ -2,10 +2,16 @@ import { Section } from "./Section";
 
 const INTERNSHIPS = [
   {
-    company: "Tech Mahindhra Foundation",
-    role: "Mechanical",
+    company: "Tech Mahindra Foundation (BCT-TMF)",
+    role: "Mechanical Technical Training",
     period: "6 Months",
     status: "Completed",
+    description: [
+      "Gained exposure to industrial processes and mechanical systems",
+      "Observed machine operations and workflow",
+      "Learned maintenance practices and safety procedures",
+      "Understood practical applications of mechanical engineering concepts"
+    ]
   },
 ];
 
@@ -14,7 +20,7 @@ export function Internships() {
     <Section id="internships">
       <div className="space-y-12">
         <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
-          Internships
+          Internships & Training
         </h2>
 
         <div className="relative border-l border-white/10 ml-3 md:ml-4 space-y-12 pb-4">
@@ -43,9 +49,19 @@ export function Internships() {
                 </span>
               </div>
               
-              <p className="text-muted text-base md:text-lg">
+              <p className="text-muted text-base md:text-lg mb-4">
                 {item.role}
               </p>
+
+              {item.description && (
+                <ul className="list-disc list-inside space-y-2 text-muted/80 text-sm md:text-base pl-2">
+                  {item.description.map((bullet, bIndex) => (
+                    <li key={bIndex} className="leading-relaxed">
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
           ))}
         </div>
